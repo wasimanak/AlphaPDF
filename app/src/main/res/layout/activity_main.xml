@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:keepScreenOn="true"
+
+    >
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/pdfView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    </com.github.barteksc.pdfviewer.PDFView>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF24A1DA"
+            android:id="@+id/appbar"
+
+            app:fabCradleMargin="@dimen/_10sdp"
+            app:fabCradleRoundedCornerRadius="@dimen/_40sdp"
+            android:layout_gravity="bottom">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:menu="@menu/bottom_navigation_menu"
+                android:background="@android:color/transparent"
+                app:labelVisibilityMode="labeled"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                app:elevation="0dp"
+                app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"/>
+
+            />
+            
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_anchor="@id/appbar"
+            android:id="@+id/btn_fab"
+            app:elevation="@dimen/_20sdp"
+            app:shapeAppearanceOverlay="@style/fab_btn"
+            android:src="@drawable/add"
+            android:backgroundTint="@color/white">
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+        
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
